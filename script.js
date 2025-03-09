@@ -18,7 +18,7 @@ if (document.getElementById("chapter-list")) {
 
 // 处理播放页面
 if (document.getElementById("audio-player")) {
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", function() {
         const params = new URLSearchParams(window.location.search);
         const chapterId = params.get("chapter");
         const chapter = chapters.find(chap => chap.id == chapterId);
@@ -26,6 +26,7 @@ if (document.getElementById("audio-player")) {
         if (chapter) {
             document.getElementById("chapter-title").textContent = chapter.name;
             document.getElementById("audio-player").src = chapter.audio;
+            document.getElementById("audio-player").load();
 
             fetch(chapter.text)
                 .then(response => response.text())
