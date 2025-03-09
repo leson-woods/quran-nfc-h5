@@ -22,12 +22,15 @@ if (document.getElementById("audio-player")) {
         const params = new URLSearchParams(window.location.search);
         const chapterId = params.get("chapter");
         const chapter = chapters.find(chap => chap.id == chapterId);
+        const audioPlayer = document.getElementById("audio-player");
+        const playButton = document.createElement("button");
+        playButton.textContent = "▶️ تشغيل الصوت";
+        playButton.classList.add("play-button");
+        document.querySelector(".audio-container").appendChild(playButton);
 
         if (chapter) {
             document.getElementById("chapter-title").textContent = chapter.name;
-            document.getElementById("audio-player").src = chapter.audio;
-            document.getElementById("audio-player").load();
-            document.getElementById("audio-player").play(); // 尝试自动播放
+            audioPlayer.src = chapter.audio;
 
             fetch(chapter.text)
                 .then(response => response.text())
@@ -41,6 +44,11 @@ if (document.getElementById("audio-player")) {
             document.getElementById("chapter-title").textContent = "章节未找到";
             document.getElementById("text-content").innerText = "无法加载内容";
         }
+
+        // 用户点击按钮后播放音频
+        playButton.addEventListener("click", function() {
+            audioPlayer.play().catch(error => console.log("播放失败: ", error));
+        });
     });
 }
 
