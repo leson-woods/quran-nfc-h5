@@ -8,17 +8,17 @@
 </head>
 <body>
     <header>
+        <button class="back-btn" onclick="goBack()">←</button>
         <h1 class="title">مشغل القرآن الكريم</h1>
     </header>
     
     <div class="container">
-        <h2 class="subtitle">تشغيل السور</h2>
-        <div class="player">
-            <audio id="audio-player" controls>
-                <source src="audio/1.mp3" type="audio/mpeg">
-                متصفحك لا يدعم تشغيل الصوت.
-            </audio>
-        </div>
+        <h2 class="subtitle" id="chapter-title">تشغيل السور</h2>
+        <audio id="audio-player" controls>
+            <source src="" type="audio/mpeg">
+            متصفحك لا يدعم تشغيل الصوت.
+        </audio>
+        <div id="text-content" class="quran-text"></div>
     </div>
     
     <script src="script.js"></script>
