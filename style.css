@@ -2,19 +2,31 @@ body {
     font-family: 'Amiri', serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f0;
+    background-color: #0f3d27;
     text-align: center;
     direction: rtl;
 }
 
 header {
-    background: linear-gradient(to bottom, #0f3d27, #1a5c41);
+    background: transparent;
     color: gold;
     padding: 20px;
     font-size: 28px;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background: transparent;
+    color: gold;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 15px;
 }
 
 .container {
@@ -26,67 +38,6 @@ header {
     border-radius: 15px;
 }
 
-#chapter-list {
-    list-style: none;
-    padding: 0;
-}
-
-#chapter-list li {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-}
-
-#chapter-list li a {
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: bold;
-    color: #0f3d27;
-    background: white;
-    display: block;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
-}
-
-#chapter-list li a:hover {
-    background-color: gold;
-    color: black;
-}
-
-.back-btn {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: white;
-    color: black;
-    border: 3px solid black;
-    font-size: 22px;
-    font-weight: bold;
-    padding: 10px 25px;
-    border-radius: 10px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.back-btn::before {
-    content: '←';
-    font-size: 24px;
-    font-weight: bold;
-    margin-right: 5px;
-}
-
-
-.back-btn::before {
-    content: '\2190'; /* 左箭头符号 */
-    font-size: 24px;
-    font-weight: bold;
-}
-
 .quran-text {
     padding: 20px;
     font-size: 24px;
@@ -95,4 +46,19 @@ header {
     text-align: right;
     font-weight: bold;
     color: #0f3d27;
+}
+
+.audio-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #0f3d27;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.audio-container audio {
+    width: 90%;
+    max-width: 600px;
 }
