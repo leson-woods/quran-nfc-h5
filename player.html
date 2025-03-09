@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quran Player</title>
+    <title>مشغل القرآن</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
-        <button onclick="goBack()" class="back-btn">&#8592; Back</button>
-        <h1 id="chapter-title"></h1>
+        <h1 class="title">مشغل القرآن الكريم</h1>
     </header>
-
+    
     <div class="container">
-        <audio id="audio-player" controls></audio>
-        <div id="text-content" class="quran-text"></div>
+        <h2 class="subtitle">تشغيل السور</h2>
+        <div class="player">
+            <audio id="audio-player" controls>
+                <source src="audio/1.mp3" type="audio/mpeg">
+                متصفحك لا يدعم تشغيل الصوت.
+            </audio>
+        </div>
     </div>
-
+    
     <script src="script.js"></script>
-
 </body>
 </html>
