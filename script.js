@@ -27,6 +27,7 @@ if (document.getElementById("audio-player")) {
             document.getElementById("chapter-title").textContent = chapter.name;
             document.getElementById("audio-player").src = chapter.audio;
             document.getElementById("audio-player").load();
+            document.getElementById("audio-player").play(); // 尝试自动播放
 
             fetch(chapter.text)
                 .then(response => response.text())
