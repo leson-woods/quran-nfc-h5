@@ -61,16 +61,25 @@ header {
     transform: translateY(-50%);
     background: white;
     color: black;
-    border: 2px solid black;
+    border: 3px solid black;
     font-size: 22px;
     font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 10px 25px;
+    border-radius: 10px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+.back-btn::before {
+    content: '←';
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
 
 .back-btn::before {
     content: '\2190'; /* 左箭头符号 */
