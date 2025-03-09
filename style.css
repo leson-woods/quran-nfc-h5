@@ -59,11 +59,23 @@ header {
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: white;
+    background: white;
+    color: black;
+    border: 2px solid black;
     font-size: 22px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.back-btn::before {
+    content: '\2190'; /* 左箭头符号 */
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .quran-text {
