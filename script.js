@@ -8,7 +8,7 @@ const chapters = [
 if (document.getElementById('chapter-list')) {
     const list = document.getElementById('chapter-list');
     chapters.forEach(chapter => {
-        let listItem = document.createElement('li');
+        let listItem = document.createElement("li");
         listItem.textContent = chapter.name;
         listItem.onclick = () => {
             window.location.href = `player.html?chapter=${chapter.id}`;
@@ -18,22 +18,23 @@ if (document.getElementById('chapter-list')) {
 }
 
 // 在 player.html 解析章节并加载音频和文本
-if (document.getElementById('audio-player')) {
+if (document.getElementById("audio-player")) {
     const params = new URLSearchParams(window.location.search);
-    const chapterId = params.get('chapter');
+    const chapterId = params.get("chapter");
     const chapter = chapters.find(chap => chap.id == chapterId);
 
     if (chapter) {
-        document.getElementById('chapter-title').textContent = chapter.name;
-        document.getElementById('audio-player').src = chapter.audio;
+        document.getElementById("chapter-title").textContent = chapter.name;
+        document.getElementById("audio-player").src = chapter.audio;
 
+        // 加载文本
         fetch(chapter.text)
             .then(response => response.text())
             .then(text => {
-                document.getElementById('text-content').innerText = text;
+                document.getElementById("text-content").innerText = text;
             })
             .catch(error => {
-                document.getElementById('text-content').innerText = "无法加载文本";
+                document.getElementById("text-content").innerText = "无法加载文本";
             });
     }
 }
