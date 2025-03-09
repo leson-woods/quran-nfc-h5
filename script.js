@@ -10,7 +10,7 @@ if (document.getElementById("chapter-list")) {
         const list = document.getElementById("chapter-list");
         chapters.forEach(chapter => {
             const listItem = document.createElement("li");
-            listItem.innerHTML = `<a href="player.html?chapter=${chapter.id}">${chapter.name}</a>`;
+            listItem.innerHTML = `<a href="player.html?chapter=${chapter.id}" class="chapter-link">${chapter.name}</a>`;
             list.appendChild(listItem);
         });
     });
@@ -36,6 +36,9 @@ if (document.getElementById("audio-player")) {
                 .catch(() => {
                     document.getElementById("text-content").innerText = "无法加载文本";
                 });
+        } else {
+            document.getElementById("chapter-title").textContent = "章节未找到";
+            document.getElementById("text-content").innerText = "无法加载内容";
         }
     });
 }
